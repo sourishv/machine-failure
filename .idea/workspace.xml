@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6f31cf5-d84d-4e67-9ced-6f5cebdeefc8" name="Changes" comment="v0.0 machine failure ML project" />
+    <list default="true" id="d6f31cf5-d84d-4e67-9ced-6f5cebdeefc8" name="Changes" comment="v0.0 machine failure ML project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,14 +31,17 @@
     &quot;assignee&quot;: &quot;sourishv&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:/sourishv/machine-faliure.git&quot;,
-    &quot;accountId&quot;: &quot;d94a305c-c82f-433f-9a98-8217d6d30aff&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/sourishv/machine-failure.git",
+    "accountId": "d94a305c-c82f-433f-9a98-8217d6d30aff"
   }
-}</component>
+}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -80,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716677020663</updated>
       <workItem from="1716677022099" duration="1803000" />
-      <workItem from="1716680410248" duration="440000" />
+      <workItem from="1716680410248" duration="3111000" />
     </task>
     <task id="LOCAL-00001" summary="v0.0 machine failure ML project">
       <option name="closed" value="true" />
@@ -90,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716680476589</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v0.0 machine failure ML project">
+      <option name="closed" value="true" />
+      <created>1716680956336</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716680956336</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +128,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="v0.0 machine failure ML project" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/machine_faliure$main.coverage" NAME="main Coverage Results" MODIFIED="1716678791250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/machine_faliure$main.coverage" NAME="main Coverage Results" MODIFIED="1716683927103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
