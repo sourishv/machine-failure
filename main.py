@@ -21,8 +21,8 @@ df[['Air Temperature (K)', 'Process Temperature (K)', 'Rotational Speed (RPM)',
 
 # Convert 'Type' to one-hot encoding:
 
-# Define mapping
-size_mapping = {'s': 1, 'm': 2, 'l': 3}
+# Define mapping: Quality variants L/M/H = 2/3/5 additional minutes tool wear
+size_mapping = {'L': 2, 'M': 2, 'H': 5}
 
 # Apply mapping to your data
 df['Type'] = df['Type'].map(size_mapping)
@@ -34,6 +34,11 @@ df['Type'] = df['Type'].map(size_mapping)
 # Removes rows with missing values (4 missing tool types found)
 df.dropna(how='all', inplace=True)
 
+# Remove outliers
+df = df[(df['Process Temperature (K)'] < 400) & (df['Process Temperature (K)'] > 111)]
+# Remove outliers for torque
+df = df[(df['Torque (Nm)'] > 5) & (df['Torque (Nm)'] < 150)]
+
 # Formatting:
 
 pd.options.display.max_rows = 10
@@ -44,10 +49,10 @@ pd.options.display.float_format = "{:.1f}".format
 #print("\nTest Set:")
 #print(test_df)
 
-# Visualization: Opens seaborn plot in new window and prints data info
-#   display_data_info(df)
+# Visualization: Seaborn plot commented out in data_visualization.py (opens in new window)
+# display_data_info(df)
 
-# PREPROCESSING LAYERS: For now, only normalization, future: maybe buckets
+# PREPROCESSING LAYERS: For now, only normalization and buckets
 # Normalization:
 
 # Define the normalization layer
