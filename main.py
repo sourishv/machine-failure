@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import tensorflow as tf
 from data_visualization import display_data_info
-
+import train
 
 # Load dataset from huggingface as dictionary
 dataset = load_dataset("pgurazada1/machine-failure-mlops-demo-logs")
@@ -19,6 +19,16 @@ df = pd.DataFrame(dataset)
 df[['Air Temperature (K)', 'Process Temperature (K)', 'Rotational Speed (RPM)',
     'Torque (Nm)', 'Tool Wear (min)', 'Type', 'prediction']] = pd.DataFrame(df['train'].tolist(), index=df.index)
 
+#MAKE THIS MY INPUTS
+# Keras Input tensors of float values.
+inputs = {
+    'latitude':
+        tf.keras.layers.Input(shape=(1,), dtype=tf.float32,
+                              name='latitude'),
+    'longitude':
+        tf.keras.layers.Input(shape=(1,), dtype=tf.float32,
+                              name='longitude')
+}
 # Convert 'Type' to one-hot encoding:
 
 # Define mapping: Quality variants L/M/H = 2/3/5 additional minutes tool wear
@@ -76,5 +86,24 @@ for feature, layer in normalization_layers.items():
     print(f"{feature}: {type(layer)}")
 
 # Concatenate our inputs into a single tensor. (reshape: to 2d array with 1 column)
-preprocessing_layers = tf.keras.layers.Concatenate()(
+outputs = tf.keras.layers.Concatenate()(
     [normalization_layers[feature](df[feature].values.reshape(-1, 1)) for feature in features])
+
+# TRAINING
+# The following variables are the hyperparameters.
+learning_rate = 0.04
+epochs = 35
+
+# Build the model.
+my_model = train.create_model(inputs, outputs, learning_rate)
+
+# Train the model on the training set.
+epochs, rmse = train.train_model(my_model, train_df, epochs, batch_size, label_name)
+
+# Print out the model summary.
+my_model.summary(expand_nested=True)
+
+train.plot_the_loss_curve(epochs, rmse)
+
+print("\n: Evaluate the new model against the test set:")
+my_model.evaluate(x=test_features, y=test_label, batch_size=batch_size)
